@@ -1,9 +1,10 @@
 class Question
 
 
-  def initialize(num1, num2)
+  def initialize
     @num1 = rand(1..20)
     @num2 = rand(1..20)
+    @sum = @num1 + @num2
   end
 
   def get_num1
@@ -14,8 +15,12 @@ class Question
     @num2
   end
 
-end
+  def question_maker
+    "What is #{@num1} + #{@num2}?"
+  end
 
-round1 = Question.new(1,2)
-puts round1.get_num1
-puts round1.get_num2
+  def question_answer
+    @sum
+  end
+
+end
