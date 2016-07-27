@@ -1,18 +1,26 @@
-require './player.rb'
-
 class Turn
 
-  def initialize(roundNum)
-    @roundNum = roundNum
-
-    if @roundNum.to_i.even?
-      puts "It's player 2's turn!"
-    else
-      puts "It's player 1's turn!"
-    end
+  def initialize(player)
+    @player = player
+    puts "in initialize", @player.name
+    # if @turnNum.to_i.even?
+    #   puts "It's player2's turn!"
+    # else
+    #   puts "Player1's turn."
+    # end
 
   end
 
-end
+  def play
+    q = Question.new
+    puts q.question #ask question
+    q.ask_player
+    @player.lose_life if !q.is_correct?
+    q.is_correct?
+  end
 
-turn1 = Turn.new(@roundNum)
+  def keep_playing?
+    @player.life > 0
+  end
+
+end
