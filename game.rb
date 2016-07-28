@@ -1,6 +1,3 @@
-require ("./player")
-require ("./turn")
-
 class Game
   def initialize
     @player1 = Player.new("Player 1")
@@ -8,9 +5,9 @@ class Game
   end
 
   def print_score
-    puts "Player 1 has: #{@player1.life} lives"
-    puts "Player 2 has: #{@player2.life} lives"
-    puts "----------------------"
+    puts "Player 1 has: #{@player1.life}/3 lives"
+    puts "Player 2 has: #{@player2.life}/3 lives"
+    puts "---------NEXT TURN----------"
   end
 
   def run
@@ -29,7 +26,6 @@ class Game
 
     end
     puts "Game Over"
-    # switches between @player1 and @player2
   end
 
 end

@@ -2,21 +2,19 @@ class Turn
 
   def initialize(player)
     @player = player
-    puts "in initialize", @player.name
-    # if @turnNum.to_i.even?
-    #   puts "It's player2's turn!"
-    # else
-    #   puts "Player1's turn."
-    # end
-
   end
 
   def play
     q = Question.new
-    puts q.question #ask question
+    print @player.name, ": ", q.question
+    puts ''
     q.ask_player
     @player.lose_life if !q.is_correct?
-    q.is_correct?
+    if q.is_correct?
+      puts "Boo Yah!"
+    else
+      puts "?????"
+    end
   end
 
   def keep_playing?

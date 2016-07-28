@@ -10,8 +10,4 @@ class Player
     @life -= 1
   end
 
-
 end
-
-player1 = Player.new('Player1')
-player2 = Player.new('Player2')

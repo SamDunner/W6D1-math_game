@@ -18,7 +18,6 @@ class Question
     @user_answer == @sum
   end
 
-
   def question_answer
     @sum
   end
